@@ -6,6 +6,7 @@ import { BlinkCursor } from './BlinkCursor'
 
 const lines = [
   { cmd: 'contact --email', value: profile.email, href: `mailto:${profile.email}` },
+  { cmd: 'open resume.pdf', value: 'Google Drive ↗', href: profile.resume },
   { cmd: 'contact --github', value: 'pranavraj101', href: profile.github },
   { cmd: 'contact --linkedin', value: 'pranav-raj', href: profile.linkedin },
 ]

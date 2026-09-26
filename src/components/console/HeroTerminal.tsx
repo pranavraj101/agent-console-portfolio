@@ -109,9 +109,22 @@ export function HeroTerminal() {
           )}
 
           {(phase === 'done' || reduced) && (
-            <h1 className="mt-4 text-2xl text-[var(--text-heading)] md:text-3xl">
-              {profile.name}
-            </h1>
+            <>
+              <h1 className="mt-4 text-2xl text-[var(--text-heading)] md:text-3xl">
+                {profile.name}
+              </h1>
+              <p className="mt-3 font-mono text-xs">
+                <span className="text-[var(--accent)]">$</span> open resume.pdf{' '}
+                <a
+                  href={profile.resume}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-[var(--text-heading)] underline-offset-2 hover:text-[var(--accent)] hover:underline"
+                >
+                  view on Google Drive ↗
+                </a>
+              </p>
+            </>
           )}
         </div>
 

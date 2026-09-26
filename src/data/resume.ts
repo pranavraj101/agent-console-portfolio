@@ -6,6 +6,8 @@ export const profile = {
   email: 'sinhapranavraj10142@gmail.com',
   linkedin: 'https://www.linkedin.com/in/pranav-raj-4541b1194/',
   github: 'https://github.com/pranavraj101',
+  resume:
+    'https://drive.google.com/file/d/1FZvCzb7OGxfKOfMfCMzgXSo2JiHUse7-/view?usp=sharing',
 } as const
 
 export type Experience = {

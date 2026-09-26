@@ -1,6 +1,7 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import { useMemo, useState } from 'react'
 import { caseStudies } from '../../data/caseStudies'
+import { profile } from '../../data/resume'
 import { usePagedNavigation } from '../../hooks/usePagedNavigation'
 import { ArtifactsPage } from './ArtifactsPage'
 import { CaseStudyPage } from './CaseStudyPage'
@@ -105,7 +106,17 @@ export function ConsoleShell() {
               </button>
             ))}
           </nav>
-          <StatusPill status="RUNNING" className="!text-[10px]" />
+          <div className="flex items-center gap-2">
+            <a
+              href={profile.resume}
+              target="_blank"
+              rel="noreferrer"
+              className="hidden font-mono text-[10px] uppercase text-[var(--text-muted)] hover:text-[var(--accent)] sm:inline"
+            >
+              resume ↗
+            </a>
+            <StatusPill status="RUNNING" className="!text-[10px]" />
+          </div>
         </div>
       </motion.header>
 

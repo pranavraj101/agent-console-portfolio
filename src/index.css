@@ -1,0 +1,98 @@
+@import 'tailwindcss';
+
+:root {
+  --bg: #0b0d10;
+  --bg-elevated: #0f1216;
+  --border: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.14);
+  --text-heading: #e8eaed;
+  --text-body: #b4bac4;
+  --text-muted: #7a828e;
+  --text-dim: #525862;
+  --accent: #4da3ff;
+  --status-pass: #3ddc84;
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body,
+#root {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--text-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+::selection {
+  background: rgba(77, 163, 255, 0.25);
+}
+
+@keyframes terminal-blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.terminal-cursor {
+  animation: terminal-blink 1s step-end infinite;
+}
+
+.terminal-shell::after {
+  content: '';
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 45;
+  opacity: 0.035;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.4) 2px,
+    rgba(0, 0, 0, 0.4) 4px
+  );
+}
+
+.terminal-window-body::before {
+  content: '';
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at top,
+    rgba(77, 163, 255, 0.04),
+    transparent 55%
+  );
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .terminal-cursor {
+    animation: none;
+    opacity: 1;
+  }
+  .page-transition-blur {
+    filter: none !important;
+  }
+}
